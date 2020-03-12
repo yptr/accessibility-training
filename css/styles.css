@@ -1,3 +1,7 @@
+body {
+  color: #000000;
+}
+
 .hero-bg {
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
     url("../img/accessibility-hero-banner.jpg") no-repeat center center fixed;
@@ -84,14 +88,13 @@
   box-shadow: 0 10px 16px rgba(0, 0, 0, 0.13), 0 6px 6px rgba(0, 0, 0, 0.19);
 }
 
-
 .has-same-height .card {
   height: 350px;
   overflow: hidden;
 }
 
 .skills-content .media + .media {
-  margin-top: .5rem;
+  margin-top: 0.5rem;
 }
 
 .skills-content .progress {
@@ -103,8 +106,8 @@
 }
 
 .info-tiles {
-  margin: .75rem auto;
-  padding: 0 .75rem;
+  margin: 0.75rem auto;
+  padding: 0 0.75rem;
 }
 
 .button.is-primary.is-alt {
@@ -118,7 +121,7 @@
 .post {
   margin: 1rem;
   padding-bottom: 1rem;
-  border-bottom: 1px solid #E6EAEE;
+  border-bottom: 1px solid #e6eaee;
 }
 .post:last-child {
   padding-bottom: 0;
@@ -126,9 +129,8 @@
 }
 
 .forum-list li {
-  margin-bottom: .5rem;
+  margin-bottom: 0.5rem;
 }
-
 
 @media screen and (max-width: 1087px) {
   .navbar-menu {
@@ -175,4 +177,216 @@ li {
   width: 40px;
   height: 40px;
   background-size: contain;
+}
+
+h2,
+h5 {
+  color: #292929;
+}
+
+.breadcrumb a {
+  color: #000000;
+}
+
+.breadcrumb a:hover {
+  color: #2d20f7;
+}
+
+#breadcrumb-3 a:hover {
+  color: #ffeb3b;
+}
+
+.breadcrumb li + li::before {
+  color: #000000;
+  content: "\0002f";
+}
+
+#breadcrumb-1,
+#breadcrumb-5 {
+  width: 1152px;
+  margin: 0 auto;
+}
+
+.button.is-link:focus:not(:active),
+.button.is-primary:focus:not(:active),
+.button:focus:not(:active) {
+  border-color: transparent;
+  border-radius: 2px;
+  outline: 0;
+  box-shadow: 0 0 2px 1.5px rgb(36, 91, 192), 0 0 3px 3px #fff;
+}
+
+.field.is-grouped > .control {
+  align-self: flex-end;
+}
+
+a,
+.hero.is-info .tabs.is-boxed li.is-active a {
+  color: #2d20f7;
+}
+
+.hero.is-info .tabs.is-boxed li.is-active:focus a {
+  background-color: transparent;
+  color: #ffffff;
+}
+
+.hero.is-info .tabs.is-boxed li:focus {
+  border-color: transparent;
+  border-radius: 4px 4px 0 0;
+  outline: 0;
+  box-shadow: 0px 0px 0px 2px rgb(255, 255, 255) inset;
+}
+
+.title,
+.subtitle {
+  display: block;
+}
+
+.card-title {
+  padding-right: 140px;
+  font-weight: 600;
+}
+
+.card-header-title {
+  flex-grow: 0;
+}
+
+.title.is-2,
+.subtitle.is-5,
+.hero.is-info .tabs.is-boxed li.is-active a:hover {
+  color: #000000;
+}
+
+.hero.is-info,
+.button.is-info,
+.button.is-link {
+  background-color: #1b2f94;
+  color: #ffffff;
+}
+
+.button.is-info:hover,
+.button.is-link:hover {
+  background-color: #004e82;
+  color: #ffffff;
+}
+
+#styled-coffee {
+  font-weight: bold;
+}
+
+.medias a {
+  font-weight: bold;
+}
+
+.card-header-title#small {
+  font-size: 0.5rem;
+}
+
+span.tag.is-danger {
+  background-color: #a01d37;
+}
+
+span.tag.is-primary {
+  background-color: #086351;
+}
+
+span.tag.is-success {
+  color: #000000;
+}
+
+.has-text-grey-light {
+  color: #545454 !important;
+}
+
+.help {
+  font-size: 1rem;
+}
+
+.help.is-success {
+  color: #007915;
+}
+
+.help.is-danger {
+  color: #cc1717;
+}
+
+footer {
+  background-color: #fafafa;
+  padding: 3rem 1.5rem 6rem;
+}
+
+footer .content a {
+  text-decoration: underline;
+}
+
+a:focus,
+.field .control .input:focus,
+.field .control .select select:focus,
+.field .control .textarea:focus,
+.field .control .checkbox input:focus,
+.field .control .radio input:focus {
+  border-color: transparent;
+  border-radius: 2px;
+  outline: 0;
+  box-shadow: 0 0 2px 1.5px rgb(36, 91, 192), 0 0 3px 3px #fff;
+}
+
+.field .control .button:focus {
+  border-color: transparent;
+  border-radius: 2px;
+  outline: 0;
+  box-shadow: 0 0 2px 1.5px rgb(36, 91, 192), 0 0 3px 3px #000;
+}
+
+.field .control .input.is-success:focus {
+  border-radius: 2px;
+  outline: 0;
+  box-shadow: 0 0 2px 1.5px rgb(30, 158, 30), 0 0 3px 3px #fff;
+}
+
+.field .control .input.is-danger:focus {
+  border-radius: 2px;
+  outline: 0;
+  box-shadow: 0 0 2px 1.5px rgb(212, 50, 50), 0 0 3px 3px #fff;
+}
+
+.button.is-text {
+  border: 1px solid black;
+  border-radius: 4px;
+}
+
+#radiogroup-label {
+  display: block;
+}
+
+.visuallyhidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+  color: white;
+}
+
+.visuallyhidden:focus {
+  width: auto;
+  height: auto;
+  clip: auto;
+  cursor: pointer;
+  z-index: 9999999;
+}
+
+.capitalized-link {
+  text-transform: capitalize;
+}
+
+.external-link {
+  margin-left: 4px;
+}
+
+fieldset {
+  border: none;
 }
