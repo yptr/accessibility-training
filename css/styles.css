@@ -9,7 +9,6 @@ body {
 }
 
 .tabs {
-  margin-bottom: -1px !important;
   position: relative;
 }
 .tab-content {
@@ -184,29 +183,6 @@ h5 {
   color: #292929;
 }
 
-.breadcrumb a {
-  color: #000000;
-}
-
-.breadcrumb a:hover {
-  color: #2d20f7;
-}
-
-#breadcrumb-3 a:hover {
-  color: #ffeb3b;
-}
-
-.breadcrumb li + li::before {
-  color: #000000;
-  content: "\0002f";
-}
-
-#breadcrumb-1,
-#breadcrumb-5 {
-  width: 1152px;
-  margin: 0 auto;
-}
-
 .button.is-link:focus:not(:active),
 .button.is-primary:focus:not(:active),
 .button:focus:not(:active) {
@@ -243,7 +219,6 @@ a,
 }
 
 .card-title {
-  padding-right: 140px;
   font-weight: 600;
 }
 
@@ -312,7 +287,6 @@ span.tag.is-success {
 
 footer {
   background-color: #fafafa;
-  padding: 3rem 1.5rem 6rem;
 }
 
 footer .content a {
@@ -355,7 +329,7 @@ a:focus,
   border-radius: 4px;
 }
 
-#radiogroup-label {
+.block {
   display: block;
 }
 
@@ -389,4 +363,20 @@ a:focus,
 
 fieldset {
   border: none;
+}
+
+.is-pulled-right {
+  margin-left: 20px;
+}
+
+.custom-breadcrumb ol {
+  margin-left: 80px;
+  width: 600px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.custom-breadcrumb ol > li:nth-child(n + 2) {
+  padding-left: 20px;
+  border-left: 1px solid black;
 }
