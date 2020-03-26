@@ -289,7 +289,7 @@ footer {
   background-color: #fafafa;
 }
 
-footer .content a {
+.underlined {
   text-decoration: underline;
 }
 
@@ -345,7 +345,7 @@ a:focus,
   color: white;
 }
 
-.visuallyhidden:focus {
+.visuallyhidden:focus-within {
   width: auto;
   height: auto;
   clip: auto;
@@ -379,4 +379,43 @@ fieldset {
 .custom-breadcrumb ol > li:nth-child(n + 2) {
   padding-left: 20px;
   border-left: 1px solid black;
+}
+
+.hero-body {
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.hero.is-fullheight .hero-body > .container {
+  flex-grow: 0.5;
+}
+
+#timer {
+  color: #ffffff;
+  font-size: 24px;
+}
+
+#skip-nav-link:focus-within {
+  width: 150px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#skip-nav-link li {
+  width: 150px;
+  padding: 0 10px;
+  background: #eeeeee;
+}
+
+#skip-nav-link li[tabindex="0"] {
+  background: darkblue;
+}
+
+#skip-nav-link li[tabindex="0"] a {
+  color: #ffffff;
+}
+
+#skip-nav-link a {
+  color: black;
 }

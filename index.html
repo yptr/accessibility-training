@@ -17,19 +17,25 @@
   </head>
 
   <body>
-    <ul aria-label="Skip navigation links">
-      <li>
-        <a class="visuallyhidden" href="#main"
-          ><span class="visuallyhidden">Jump to</span>Main</a
+    <ul
+      class="visuallyhidden"
+      id="skip-nav-link"
+      aria-label="Skip navigation links"
+      tabindex="0"
+      role="menu"
+    >
+      <li tabindex="0" role="menuitem">
+        <a href="#hello-world"
+          ><span class="visuallyhidden">Jump to</span>Hello World</a
         >
       </li>
-      <li>
-        <a class="visuallyhidden" href="#list-of-topics"
+      <li tabindex="-1" role="menuitem">
+        <a href="#list-of-topics"
           ><span class="visuallyhidden">Jump to</span>List of topics</a
         >
       </li>
-      <li>
-        <a class="visuallyhidden" href="#contact-us"
+      <li tabindex="-1" role="menuitem">
+        <a href="#contact-us"
           ><span class="visuallyhidden">Jump to</span>Footer</a
         >
       </li>
@@ -45,14 +51,23 @@
                   src="https://www.epam.com/content/dam/epam/global/logo_white-blue.svg"
                 />
               </a>
-              <span class="navbar-burger burger" data-target="navbarMenu">
+              <button
+                class="navbar-burger burger"
+                data-target="navbarMenu"
+                aria-haspopup="true"
+                aria-controls="navbarMenu"
+              >
                 <span></span>
                 <span></span>
                 <span></span>
-              </span>
+              </button>
             </div>
 
-            <nav id="navbarMenu" class="navbar-menu">
+            <nav
+              id="navbarMenu"
+              class="navbar-menu"
+              aria-label="Main navigation"
+            >
               <div class="navbar-end">
                 <span class="navbar-item">
                   <a
@@ -111,6 +126,7 @@
       </div>
 
       <div class="hero-body">
+        <span id="timer" aria-live="polite">You are here for 0 minutes</span>
         <div class="container has-text-centered">
           <div class="column is-6 is-offset-3">
             <span class="title has-text-white"
@@ -181,14 +197,17 @@
           </div>
         </div>
 
-        <div class="content container">
-          <h1 id="hello-world">Hello World</h1>
+        <article class="content container">
+          <h1 id="hello-world" tabindex="-1">Hello World</h1>
           <p>
-            Lorem ipsum<sup><a href="#1">[1]</a></sup> dolor sit amet,
-            consectetur adipiscing elit. Nulla accumsan, metus ultrices eleifend
-            gravida, nulla nunc varius lectus, nec rutrum justo nibh eu lectus.
-            Ut vulputate semper dui. Fusce erat odio, sollicitudin vel erat vel,
-            interdum mattis neque. Sub<sub>script</sub> works as well!
+            Lorem ipsum<sup><a href="#1" title="hello world">[1]</a></sup> dolor
+            sit amet, consectetur adipiscing elit. Nulla accumsan, metus
+            ultrices eleifend gravida, nulla nunc varius lectus, nec rutrum
+            justo nibh eu lectus. Ut vulputate semper dui. Fusce erat odio,
+            sollicitudin vel erat vel, interdum mattis neque. Sub<sub
+              >script</sub
+            >
+            works as well!
           </p>
           <h2>Second level</h2>
           <p>
@@ -211,11 +230,13 @@
             </li>
             <li>- Ut non enim metus.</li>
           </ul>
-          <h3>Third level</h3>
+          <h3 id="third-level">Third level</h3>
           <p>
             Quisque ante lacus, malesuada ac auctor vitae, congue
-            <a href="#non-ante">non ante</a>. Phasellus lacus ex, semper ac
-            tortor nec, fringilla condimentum orci. Fusce eu rutrum tellus.
+            <a href="#non-ante" class="underlined" title="third level"
+              >non ante</a
+            >. Phasellus lacus ex, semper ac tortor nec, fringilla condimentum
+            orci. Fusce eu rutrum tellus.
           </p>
           <ol class="ol-list">
             <li>Donec blandit a lorem id convallis.</li>
@@ -283,6 +304,9 @@
             maximus est porta condimentum in eu justo. Nulla id iaculis sapien.
           </p>
           <table>
+            <caption>
+              Table
+            </caption>
             <thead>
               <tr>
                 <th>Header</th>
@@ -357,10 +381,13 @@
             tortor maximus dui, sed varius sapien odio vitae est. Etiam at
             cursus metus.
           </p>
-        </div>
+        </article>
       </section>
 
-      <div class="hero has-background-grey-light">
+      <section
+        class="hero has-background-grey-light"
+        aria-label="three key features"
+      >
         <div class="container features">
           <div class="section-heading has-text-centered">
             <h2 id="three-key-features">Three key features</h2>
@@ -375,7 +402,9 @@
                 </div>
                 <div class="card-content">
                   <div class="content">
-                    <span>Tristique senectus et netus et.</span>
+                    <span id="card1-content-heading"
+                      >Tristique senectus et netus et.</span
+                    >
                     <p>
                       Purus semper eget duis at tellus at urna condimentum
                       mattis. Non blandit massa enim nec. Integer enim neque
@@ -384,8 +413,11 @@
                     </p>
                     <p>
                       <a class="capitalized-link" href="#learn-more-tristique"
-                        >learn more</a
-                      >
+                        >learn more<span
+                          class="visuallyhidden"
+                          aria-labelledby="card1-content-heading"
+                        ></span
+                      ></a>
                     </p>
                   </div>
                 </div>
@@ -399,7 +431,9 @@
                 </div>
                 <div class="card-content">
                   <div class="content">
-                    <span>Tempor orci dapibus ultrices in.</span>
+                    <span id="card2-content-heading"
+                      >Tempor orci dapibus ultrices in.</span
+                    >
                     <p>
                       Ut venenatis tellus in metus vulputate. Amet consectetur
                       adipiscing elit pellentesque. Sed arcu non odio euismod
@@ -409,8 +443,11 @@
                     </p>
                     <p>
                       <a class="capitalized-link" href="#learn-more-tempor"
-                        >learn more</a
-                      >
+                        >learn more<span
+                          class="visuallyhidden"
+                          aria-labelledby="card2-content-heading"
+                        ></span
+                      ></a>
                     </p>
                   </div>
                 </div>
@@ -424,7 +461,9 @@
                 </div>
                 <div class="card-content">
                   <div class="content">
-                    <span> Leo integer malesuada nunc vel risus. </span>
+                    <span id="card3-content-heading">
+                      Leo integer malesuada nunc vel risus.
+                    </span>
                     <p>
                       Imperdiet dui accumsan sit amet nulla facilisi morbi.
                       Fusce ut placerat orci nulla pellentesque dignissim enim.
@@ -433,8 +472,11 @@
                     </p>
                     <p>
                       <a class="capitalized-link" href="#learn-more-leo"
-                        >learn more</a
-                      >
+                        >learn more<span
+                          class="visuallyhidden"
+                          aria-labelledby="card3-content-heading"
+                        ></span
+                      ></a>
                     </p>
                   </div>
                 </div>
@@ -442,275 +484,290 @@
             </div>
           </div>
         </div>
-      </div>
-
-      <section class="hero is-info" aria-label="List of topics">
-        <div class="hero-body">
-          <div class="container">
-            <h2 id="list-of-topics" class="title">List of topics</h2>
-            <span class="subtitle"
-              >We are always in touch we the outside world</span
-            >
-          </div>
-        </div>
-        <div class="tabs is-boxed is-centered main-menu" id="nav">
-          <ul>
-            <li data-target="pane-1" id="1" class="is-active">
-              <a href="#pictures">
-                <span class="icon is-small"
-                  ><span aria-hidden="true" class="fa fa-image"></span
-                ></span>
-                <span>Pictures</span>
-              </a>
-            </li>
-            <li data-target="pane-3" id="3">
-              <a href="#team">
-                <span class="icon is-small"
-                  ><span aria-hidden="true" class="fab fa-superpowers"></span
-                ></span>
-                <span>Team</span>
-              </a>
-            </li>
-            <li data-target="pane-4" id="4">
-              <a href="#video">
-                <span class="icon is-small"
-                  ><span aria-hidden="true" class="fa fa-film"></span
-                ></span>
-                <span>Video</span>
-              </a>
-            </li>
-          </ul>
-        </div>
       </section>
 
-      <div class="tab-content container">
-        <div class="tab-pane is-active level" id="pane-1">
-          <div class="container">
-            <div class="columns features">
-              <div class="column is-4 modal-button">
-                <div class="card">
-                  <div class="card-image">
-                    <div class="image is-4by3">
-                      <img
-                        alt="Man controls a drone."
-                        src="./img/tab-1.jpg"
-                        class="modal-button"
-                        data-target="modal-image1"
-                      />
-                    </div>
-                  </div>
-                  <div class="card-content">
-                    <div class="content">
-                      <span>Click on image above</span>
-                      <p>
-                        Purus semper eget duis at tellus at urna condimentum
-                        mattis. Non blandit massa enim nec. Integer enim neque
-                        volutpat ac tincidunt vitae semper quis. Accumsan tortor
-                        posuere ac ut consequat semper viverra nam.
-                      </p>
-                      <button
-                        class="button is-link modal-button"
-                        data-target="modal-image1"
-                      >
-                        Image modal
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="column is-4 modal-button">
-                <div class="card">
-                  <div class="card-image">
-                    <div class="image is-4by3">
-                      <img
-                        alt="A beautiful view of coastal houses from a bird's flight."
-                        src="./img/tab-2.jpg"
-                      />
-                    </div>
-                  </div>
-                  <div class="card-content">
-                    <div class="content">
-                      <span>Tempor orci dapibus ultrices in.</span>
-                      <p>
-                        Ut venenatis tellus in metus vulputate. Amet consectetur
-                        adipiscing elit pellentesque. Sed arcu non odio euismod
-                        lacinia at quis risus. Faucibus turpis in eu mi bibendum
-                        neque egestas cmonsu songue. Phasellus vestibulum lorem
-                        sed risus.
-                      </p>
-                      <button
-                        class="button is-link modal-button"
-                        data-target="modal-card"
-                      >
-                        Modal Card
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="column is-4 modal-button" data-target="modal-image">
-                <div class="card">
-                  <div class="card-image">
-                    <div class="image is-4by3">
-                      <img
-                        alt="View of the sea with hill and rainbow on background."
-                        src="./img/tab-3.jpg"
-                        class="modal-button"
-                        data-target="modal-image2"
-                      />
-                    </div>
-                  </div>
-                  <div class="card-content">
-                    <div class="content">
-                      <span>Click anywhere on card</span>
-                      <p>
-                        Imperdiet dui accumsan sit amet nulla facilisi morbi.
-                        Fusce ut placerat orci nulla pellentesque dignissim
-                        enim. Libero id faucibus nisl tincidunt eget nullam.
-                        Commodo viverra maecenas accumsan lacus vel facilisis.
-                      </p>
-                      <button
-                        class="button is-link modal-button"
-                        data-target="modal-image2"
-                      >
-                        Image modal
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </div>
+      <section aria-label="List of topics">
+        <div class="hero is-info">
+          <div class="hero-body">
+            <div class="container">
+              <h2 id="list-of-topics" class="title" tabindex="-1">
+                List of topics
+              </h2>
+              <span class="subtitle"
+                >We are always in touch we the outside world</span
+              >
             </div>
+          </div>
+          <div class="tabs is-boxed is-centered main-menu" id="nav">
+            <ul role="tablist">
+              <li
+                data-target="pane-1"
+                id="1"
+                class="is-active"
+                role="tab"
+                aria-controls="pane-1"
+                aria-current="true"
+              >
+                <a href="#pictures">
+                  <span class="icon is-small"
+                    ><span aria-hidden="true" class="fa fa-image"></span
+                  ></span>
+                  <span>Pictures</span>
+                </a>
+              </li>
+              <li data-target="pane-3" id="3" role="tab" aria-controls="pane-3">
+                <a href="#team">
+                  <span class="icon is-small"
+                    ><span aria-hidden="true" class="fab fa-superpowers"></span
+                  ></span>
+                  <span>Team</span>
+                </a>
+              </li>
+              <li data-target="pane-4" id="4" role="tab" aria-controls="pane-4">
+                <a href="#video">
+                  <span class="icon is-small"
+                    ><span aria-hidden="true" class="fa fa-film"></span
+                  ></span>
+                  <span>Video</span>
+                </a>
+              </li>
+            </ul>
           </div>
         </div>
 
-        <div class="tab-pane" id="pane-3">
-          <div class="columns medias">
-            <div class="column">
-              <div class="media">
-                <div class="media-left">
-                  <span
-                    aria-hidden="true"
-                    class="fab fa-github-square fa-4x"
-                  ></span>
-                </div>
-                <div class="media-content">
-                  <div class="content">
-                    <a
-                      class="capitalized-link"
-                      target="_blank"
-                      href="dominic-ipsum"
-                      >dominic Ipsum<span
-                        aria-hidden="true"
-                        class="fas fa-external-link-alt external-link"
-                      ></span
-                      ><span class="visuallyhidden"
-                        >opens in new window or tab</span
-                      ></a
-                    >
-                    <br />
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Aenean efficitur sit amet massa fringilla egestas. Nullam
-                    condimentum luctus turpis.
+        <div class="tab-content container">
+          <div class="tab-pane is-active level" id="pane-1" role="tabpanel">
+            <div class="container">
+              <div class="columns features">
+                <div class="column is-4 modal-button">
+                  <div class="card">
+                    <div class="card-image">
+                      <div class="image is-4by3">
+                        <img
+                          alt="Man controls a drone."
+                          src="./img/tab-1.jpg"
+                          class="modal-button"
+                          data-target="modal-image1"
+                        />
+                      </div>
+                    </div>
+                    <div class="card-content">
+                      <div class="content">
+                        <span tabindex="0">Click on image above</span>
+                        <p>
+                          Purus semper eget duis at tellus at urna condimentum
+                          mattis. Non blandit massa enim nec. Integer enim neque
+                          volutpat ac tincidunt vitae semper quis. Accumsan
+                          tortor posuere ac ut consequat semper viverra nam.
+                        </p>
+                        <button
+                          class="button is-link modal-button"
+                          data-target="modal-image1"
+                        >
+                          Image modal
+                        </button>
+                      </div>
+                    </div>
                   </div>
                 </div>
-              </div>
-              <div class="media">
-                <div class="media-left">
-                  <span aria-hidden="true" class="fab fa-empire fa-4x"></span>
-                </div>
-                <div class="media-content">
-                  <div class="content">
-                    <a
-                      class="capitalized-link"
-                      target="_blank"
-                      href="cassie-ipsum"
-                      >cassie Ipsum<span
-                        aria-hidden="true"
-                        class="fas fa-external-link-alt external-link"
-                      ></span
-                      ><span class="visuallyhidden"
-                        >opens in new window or tab</span
-                      ></a
-                    >
-                    <br />
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Aenean efficitur sit amet massa fringilla egestas. Nullam
-                    condimentum luctus turpis.
+                <div class="column is-4 modal-button">
+                  <div class="card">
+                    <div class="card-image">
+                      <div class="image is-4by3">
+                        <img
+                          alt="A beautiful view of coastal houses from a bird's flight."
+                          src="./img/tab-2.jpg"
+                        />
+                      </div>
+                    </div>
+                    <div class="card-content">
+                      <div class="content">
+                        <span>Tempor orci dapibus ultrices in.</span>
+                        <p>
+                          Ut venenatis tellus in metus vulputate. Amet
+                          consectetur adipiscing elit pellentesque. Sed arcu non
+                          odio euismod lacinia at quis risus. Faucibus turpis in
+                          eu mi bibendum neque egestas cmonsu songue. Phasellus
+                          vestibulum lorem sed risus.
+                        </p>
+                        <button
+                          class="button is-link modal-button"
+                          data-target="modal-card"
+                          title="Tempor orci"
+                        >
+                          Modal Card
+                        </button>
+                      </div>
+                    </div>
                   </div>
                 </div>
-              </div>
-            </div>
-            <div class="column">
-              <div class="media">
-                <div class="media-left">
-                  <span aria-hidden="true" class="fab fa-ravelry fa-4x"></span>
-                </div>
-                <div class="media-content">
-                  <div class="content">
-                    <a
-                      class="capitalized-link"
-                      target="_blank"
-                      href="#avery-ipsum"
-                      >avery Ipsum<span
-                        aria-hidden="true"
-                        class="fas fa-external-link-alt external-link"
-                      ></span
-                      ><span class="visuallyhidden"
-                        >opens in new window or tab</span
-                      ></a
-                    >
-                    <br />
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Aenean efficitur sit amet massa fringilla egestas. Nullam
-                    condimentum luctus turpis.
-                  </div>
-                </div>
-              </div>
-              <div class="media">
-                <div class="media-left">
-                  <span
-                    aria-hidden="true"
-                    class="fab fa-github-alt fa-4x"
-                  ></span>
-                </div>
-                <div class="media-content">
-                  <div class="content">
-                    <a target="_blank" href="#io-ipsum"
-                      >io Ipsum<span
-                        aria-hidden="true"
-                        class="fas fa-external-link-alt external-link"
-                      ></span
-                      ><span class="visuallyhidden"
-                        >opens in new window or tab></span
-                      ></a
-                    >
-                    <br />
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Aenean efficitur sit amet massa fringilla egestas. Nullam
-                    condimentum luctus turpis.
+                <div class="column is-4 modal-button" data-target="modal-image">
+                  <div class="card">
+                    <div class="card-image">
+                      <div class="image is-4by3">
+                        <img
+                          alt="View of the sea with hill and rainbow on background."
+                          src="./img/tab-3.jpg"
+                          class="modal-button"
+                          data-target="modal-image2"
+                        />
+                      </div>
+                    </div>
+                    <div class="card-content">
+                      <div class="content">
+                        <span tabindex="0">Click anywhere on card</span>
+                        <p>
+                          Imperdiet dui accumsan sit amet nulla facilisi morbi.
+                          Fusce ut placerat orci nulla pellentesque dignissim
+                          enim. Libero id faucibus nisl tincidunt eget nullam.
+                          Commodo viverra maecenas accumsan lacus vel facilisis.
+                        </p>
+                        <button
+                          class="button is-link modal-button"
+                          data-target="modal-image2"
+                        >
+                          Image modal
+                        </button>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
 
-        <div class="tab-pane" id="pane-4">
-          <div class="columns is-centered">
-            <div class="column is-three-quarters">
-              <span class="title has-text-centered">Inspired video</span>
-              <div class="embed-container image">
-                <iframe
-                  src="https://player.vimeo.com/video/261794608"
-                  webkitAllowFullScreen
-                  mozallowfullscreen
-                  allowfullscreen
-                ></iframe>
+          <div class="tab-pane" id="pane-3" role="tabpanel">
+            <div class="columns medias">
+              <div class="column">
+                <div class="media">
+                  <div class="media-left">
+                    <span
+                      aria-hidden="true"
+                      class="fab fa-github-square fa-4x"
+                    ></span>
+                  </div>
+                  <div class="media-content">
+                    <div class="content">
+                      <a
+                        class="capitalized-link"
+                        target="_blank"
+                        href="dominic-ipsum"
+                        >dominic Ipsum<span
+                          aria-hidden="true"
+                          class="fas fa-external-link-alt external-link"
+                        ></span
+                        ><span class="visuallyhidden"
+                          >opens in new window or tab</span
+                        ></a
+                      >
+                      <br />
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                      Aenean efficitur sit amet massa fringilla egestas. Nullam
+                      condimentum luctus turpis.
+                    </div>
+                  </div>
+                </div>
+                <div class="media">
+                  <div class="media-left">
+                    <span aria-hidden="true" class="fab fa-empire fa-4x"></span>
+                  </div>
+                  <div class="media-content">
+                    <div class="content">
+                      <a
+                        class="capitalized-link"
+                        target="_blank"
+                        href="cassie-ipsum"
+                        >cassie Ipsum<span
+                          aria-hidden="true"
+                          class="fas fa-external-link-alt external-link"
+                        ></span
+                        ><span class="visuallyhidden"
+                          >opens in new window or tab</span
+                        ></a
+                      >
+                      <br />
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                      Aenean efficitur sit amet massa fringilla egestas. Nullam
+                      condimentum luctus turpis.
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="column">
+                <div class="media">
+                  <div class="media-left">
+                    <span
+                      aria-hidden="true"
+                      class="fab fa-ravelry fa-4x"
+                    ></span>
+                  </div>
+                  <div class="media-content">
+                    <div class="content">
+                      <a
+                        class="capitalized-link"
+                        target="_blank"
+                        href="#avery-ipsum"
+                        >avery Ipsum<span
+                          aria-hidden="true"
+                          class="fas fa-external-link-alt external-link"
+                        ></span
+                        ><span class="visuallyhidden"
+                          >opens in new window or tab</span
+                        ></a
+                      >
+                      <br />
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                      Aenean efficitur sit amet massa fringilla egestas. Nullam
+                      condimentum luctus turpis.
+                    </div>
+                  </div>
+                </div>
+                <div class="media">
+                  <div class="media-left">
+                    <span
+                      aria-hidden="true"
+                      class="fab fa-github-alt fa-4x"
+                    ></span>
+                  </div>
+                  <div class="media-content">
+                    <div class="content">
+                      <a target="_blank" href="#io-ipsum"
+                        >io Ipsum<span
+                          aria-hidden="true"
+                          class="fas fa-external-link-alt external-link"
+                        ></span
+                        ><span class="visuallyhidden"
+                          >opens in new window or tab></span
+                        ></a
+                      >
+                      <br />
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                      Aenean efficitur sit amet massa fringilla egestas. Nullam
+                      condimentum luctus turpis.
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="tab-pane" id="pane-4" role="tabpanel">
+            <div class="columns is-centered">
+              <div class="column is-three-quarters">
+                <span class="title has-text-centered">Inspired video</span>
+                <div class="embed-container image">
+                  <iframe
+                    src="https://player.vimeo.com/video/261794608"
+                    webkitAllowFullScreen
+                    mozallowfullscreen
+                    allowfullscreen
+                  ></iframe>
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
+      </section>
 
       <section
         class="section has-background-grey-lighter"
@@ -731,7 +788,7 @@
                     src="./img/web-access-summit-eventbrite.jpg"
                   />
                 </div>
-                <span class="title">New York</span>
+                <span class="title" tabindex="0">New York</span>
                 <span class="subtitle">Fri 27 Nov 2016</span>
                 <button class="button">Buy Tickets</button>
               </div>
@@ -744,7 +801,7 @@
                     src="./img/access.jpg"
                   />
                 </div>
-                <span class="title">Los Angeles</span>
+                <span class="title" tabindex="0">Los Angeles</span>
                 <span class="subtitle">Fri 27 Nov 2016</span>
                 <button class="button">Buy Tickets</button>
               </div>
@@ -757,7 +814,7 @@
                     src="./img/dotcss-2019.jpg"
                   />
                 </div>
-                <span class="title">Mexico</span>
+                <span class="title" tabindex="0">Mexico</span>
                 <span class="subtitle">Fri 27 Nov 2016</span>
                 <button class="button">Buy Tickets</button>
               </div>
@@ -773,7 +830,7 @@
                     src="./img/images.jpg"
                   />
                 </div>
-                <span class="title">Paris</span>
+                <span class="title" tabindex="0">Paris</span>
                 <span class="subtitle">Fri 27 Nov 2016</span>
                 <button class="button">Buy Tickets</button>
               </div>
@@ -786,7 +843,7 @@
                     src="./img/mid_300_33455472_313632022502906_5761920685983137792_n.png"
                   />
                 </div>
-                <span class="title">Minsk</span>
+                <span class="title" tabindex="0">Minsk</span>
                 <span class="subtitle">Fri 27 Nov 2016</span>
                 <button class="button">Buy Tickets</button>
               </div>
@@ -799,7 +856,7 @@
                     src="./img/access.jpg"
                   />
                 </div>
-                <span class="title">London</span>
+                <span class="title" tabindex="0">London</span>
                 <span class="subtitle">Fri 27 Nov 2016</span>
                 <button class="button">Buy Tickets</button>
               </div>
@@ -881,7 +938,7 @@
                 <div class="card">
                   <div class="card-header">
                     <p class="card-header-title">
-                      <span class="card-title"
+                      <span class="card-title" tabindex="0"
                         >Admin <span id="small">(Light)</span></span
                       >
                       <span class="is-pulled-right">
@@ -916,7 +973,7 @@
                 <div class="card">
                   <div class="card-header">
                     <p class="card-header-title">
-                      <span class="card-title">Cards</span>
+                      <span class="card-title" tabindex="0">Cards</span>
                       <span class="is-pulled-right">
                         <a href="#v072-2">
                           <span class="tag is-default">v0.7.2</span>
@@ -952,7 +1009,7 @@
                 <div class="card">
                   <div class="card-header">
                     <p class="card-header-title">
-                      <span class="card-title">Forum</span>
+                      <span class="card-title" tabindex="0">Forum</span>
                       <span class="is-pulled-right">
                         <a href="#v072-3">
                           <span class="tag is-default">v0.7.2</span>
@@ -990,7 +1047,7 @@
                 <div class="card">
                   <div class="card-header">
                     <p class="card-header-title">
-                      <span class="card-title">InstaAlbum</span>
+                      <span class="card-title" tabindex="0">InstaAlbum</span>
                       <span class="is-pulled-right">
                         <a href="#v072-4">
                           <span class="tag is-default">v0.7.2</span>
@@ -1023,7 +1080,7 @@
                 <div class="card">
                   <div class="card-header">
                     <p class="card-header-title">
-                      <span class="card-title">Landing</span>
+                      <span class="card-title" tabindex="0">Landing</span>
                       <span class="is-pulled-right">
                         <a href="#v072-5">
                           <span class="tag is-default">v0.7.2</span>
@@ -1059,7 +1116,7 @@
                 <div class="card">
                   <div class="card-header">
                     <p class="card-header-title">
-                      <span class="card-title">Marketing</span>
+                      <span class="card-title" tabindex="0">Marketing</span>
                       <span class="is-pulled-right">
                         <a href="#v072-6">
                           <span class="tag is-default">v0.7.2</span>
@@ -1136,8 +1193,9 @@
                     <div class="media-left">
                       <p class="image is-32x32">
                         <img
-                          alt=""
+                          alt="@jsmith's user avatar"
                           src="https://source.unsplash.com/random/64x64/?sig=300"
+                          tabindex="0"
                         />
                       </p>
                     </div>
@@ -1166,8 +1224,9 @@
                     <div class="media-left">
                       <p class="image is-32x32">
                         <img
-                          alt=""
+                          alt="@red's user avatar"
                           src="https://source.unsplash.com/random/64x64/?sig=301"
+                          tabindex="0"
                         />
                       </p>
                     </div>
@@ -1199,8 +1258,9 @@
                     <div class="media-left">
                       <p class="image is-32x32">
                         <img
-                          alt=""
+                          alt="@jsmith's user avatar"
                           src="https://source.unsplash.com/random/64x64/?sig=302"
+                          tabindex="0"
                         />
                       </p>
                     </div>
@@ -1229,8 +1289,9 @@
                     <div class="media-left">
                       <p class="image is-32x32">
                         <img
-                          alt=""
+                          alt="@brown's user avatar"
                           src="https://source.unsplash.com/random/64x64/?sig=303"
+                          tabindex="0"
                         />
                       </p>
                     </div>
@@ -1262,8 +1323,9 @@
                     <div class="media-left">
                       <p class="image is-32x32">
                         <img
-                          alt=""
+                          alt="@hamburgler's user avatar"
                           src="https://source.unsplash.com/random/64x64/?sig=304"
+                          tabindex="0"
                         />
                       </p>
                     </div>
@@ -1292,8 +1354,9 @@
                     <div class="media-left">
                       <p class="image is-32x32">
                         <img
-                          alt=""
+                          alt="@rapper's user avatar"
                           src="https://source.unsplash.com/random/64x64/?sig=305"
+                          tabindex="0"
                         />
                       </p>
                     </div>
@@ -1326,7 +1389,7 @@
       <section class="section has-background-light" aria-label="Contact us">
         <div class="container">
           <div class="section-heading has-text-centered">
-            <h2 id="contact-us">Contact us</h2>
+            <h2 id="contact-us" tabindex="-1">Contact us</h2>
             <span>Don't hesitate, ask anything</span>
           </div>
 
@@ -1337,7 +1400,7 @@
                 <input
                   class="input"
                   type="text"
-                  placeholder="Text input"
+                  placeholder="Type your name"
                   id="name-input"
                   required
                 />
@@ -1352,6 +1415,7 @@
                   type="text"
                   id="username-input"
                   required
+                  placeholder="Provide your username"
                 />
                 <span class="icon is-small is-left">
                   <span aria-hidden="true" class="fas fa-user"></span>
@@ -1369,10 +1433,11 @@
                 <input
                   class="input is-danger"
                   type="email"
-                  placeholder="Email input"
+                  placeholder="Provide your e-mail"
                   value="hello@"
                   id="email-input"
                   required
+                  aria-invalid="true"
                 />
                 <span class="icon is-small is-left">
                   <span aria-hidden="true" class="fas fa-envelope"></span>
@@ -1404,7 +1469,7 @@
               <div class="control">
                 <textarea
                   class="textarea"
-                  placeholder="Textarea"
+                  placeholder="Type the message"
                   id="textarea"
                 ></textarea>
               </div>
@@ -1415,7 +1480,9 @@
                 <label class="checkbox">
                   <input type="checkbox" />
                   I agree to the
-                  <a href="#terms-and-conditions">terms and conditions</a>
+                  <a href="#terms-and-conditions" class="underlined"
+                    >terms and conditions</a
+                  >
                 </label>
               </div>
             </div>
@@ -1577,31 +1644,37 @@
             <h2 class="is-3 title" id="lessons">Lessons</h2>
             <ul aria-label="lessons">
               <li>
-                <a class="capitalized-link" href="#lorem"
+                <a class="capitalized-link underlined" href="#lorem"
                   >lorem ipsum dolor sit amet</a
                 >
               </li>
               <li>
-                <a class="capitalized-link" href="#vestibulum"
+                <a class="capitalized-link underlined" href="#vestibulum"
                   >vestibulum errato isse</a
                 >
               </li>
               <li>
-                <a class="capitalized-link" href="#lorem"
+                <a class="capitalized-link underlined" href="#lorem"
                   >lorem ipsum dolor sit amet</a
                 >
               </li>
               <li>
-                <a class="capitalized-link" href="#aisia">aisia caisia</a>
+                <a class="capitalized-link underlined" href="#aisia"
+                  >aisia caisia</a
+                >
               </li>
               <li>
-                <a class="capitalized-link" href="#murphy">murphy's law</a>
+                <a class="capitalized-link underlined" href="#murphy"
+                  >murphy's law</a
+                >
               </li>
               <li>
-                <a class="capitalized-link" href="#flimsy">flimsy Lavenrock</a>
+                <a class="capitalized-link underlined" href="#flimsy"
+                  >flimsy Lavenrock</a
+                >
               </li>
               <li>
-                <a class="capitalized-link" href="#maven"
+                <a class="capitalized-link underlined" href="#maven"
                   >maven Mousie Lavender</a
                 >
               </li>
@@ -1611,35 +1684,39 @@
             <h2 class="is-3 title" id="news">News</h2>
             <ul aria-label="news">
               <li>
-                <a class="capitalized-link" href="#labore"
+                <a class="capitalized-link underlined" href="#labore"
                   >labore et dolore magna aliqua</a
                 >
               </li>
               <li>
-                <a class="capitalized-link" href="#kanban"
+                <a class="capitalized-link underlined" href="#kanban"
                   >kanban airis sum eschelor</a
                 >
               </li>
               <li>
-                <a class="capitalized-link" href="#modular"
+                <a class="capitalized-link underlined" href="#modular"
                   >modular modern free</a
                 >
               </li>
               <li>
-                <a class="capitalized-link" href="#the-king"
+                <a class="capitalized-link underlined" href="#the-king"
                   >the king of clubs</a
                 >
               </li>
               <li>
-                <a class="capitalized-link" href="#the-discovery"
+                <a class="capitalized-link underlined" href="#the-discovery"
                   >the Discovery Dissipation</a
                 >
               </li>
               <li>
-                <a class="capitalized-link" href="#course">course Correction</a>
+                <a class="capitalized-link underlined" href="#course"
+                  >course Correction</a
+                >
               </li>
               <li>
-                <a class="capitalized-link" href="#better">better Angels</a>
+                <a class="capitalized-link underlined" href="#better"
+                  >better Angels</a
+                >
               </li>
             </ul>
           </div>
@@ -1647,25 +1724,29 @@
             <h2 class="is-3 title" id="help">Help</h2>
             <ul aria-label="help">
               <li>
-                <a class="capitalized-link" href="#objects">objects in space</a>
+                <a class="capitalized-link underlined" href="#objects"
+                  >objects in space</a
+                >
               </li>
               <li>
-                <a class="capitalized-link" href="#playing"
+                <a class="capitalized-link underlined" href="#playing"
                   >playing cards with coyote</a
                 >
               </li>
               <li>
-                <a class="capitalized-link" href="#goodbye"
+                <a class="capitalized-link underlined" href="#goodbye"
                   >goodbye Yellow Brick Road</a
                 >
               </li>
               <li>
-                <a class="capitalized-link" href="#the-garden"
+                <a class="capitalized-link underlined" href="#the-garden"
                   >the Garden of Forking Paths</a
                 >
               </li>
               <li>
-                <a class="capitalized-link" href="#future">future Shock</a>
+                <a class="capitalized-link underlined" href="#future"
+                  >future Shock</a
+                >
               </li>
             </ul>
           </div>
@@ -1719,18 +1800,19 @@
             <a
               target="_blank"
               href="http://opensource.org/licenses/mit-license.php"
+              class="underlined"
               >MIT<span
                 aria-hidden="true"
                 class="fas fa-external-link-alt external-link"
               ></span
               ><span class="visuallyhidden">opens in new window or tab</span></a
-            >.
+            >
           </p>
         </div>
       </div>
     </footer>
 
-    <div id="modal-card" class="modal modal-fx-3dSlit">
+    <div id="modal-card" class="modal modal-fx-3dSlit" aria-modal="true">
       <div class="modal-background"></div>
       <div class="modal-content is-tiny">
         <div class="card">
@@ -1787,7 +1869,7 @@
       ></button>
     </div>
 
-    <div id="modal-image1" class="modal modal-fx-3dSlit">
+    <div id="modal-image1" class="modal modal-fx-3dSlit" aria-modal="true">
       <div class="modal-background"></div>
       <div class="modal-content is-huge is-image">
         <img
@@ -1801,7 +1883,7 @@
       ></button>
     </div>
 
-    <div id="modal-image2" class="modal modal-fx-superScaled">
+    <div id="modal-image2" class="modal modal-fx-superScaled" aria-modal="true">
       <div class="modal-background"></div>
       <div class="modal-content is-image">
         <img
