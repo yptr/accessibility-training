@@ -81,7 +81,14 @@
                   </a>
                 </span>
                 <span class="navbar-item">
-                  <a class="button is-white is-outlined" href="#examples">
+                  <a
+                    class="button is-white is-outlined"
+                    href="#examples"
+                    role="button"
+                    aria-expanded="false"
+                    aria-haspopup="true"
+                    id="header-menu-button"
+                  >
                     <span class="icon">
                       <span
                         aria-hidden="true"
@@ -90,6 +97,24 @@
                     </span>
                     <span>Examples</span>
                   </a>
+                  <ul role="menu" aria-label="Examples" id="header-menu" hidden>
+                    <li role="menuitem" class="header-menu-item" tabindex="-1">
+                      Administration
+                    </li>
+                    <li role="menuitem" class="header-menu-item" tabindex="-1">
+                      Team Settings
+                    </li>
+                    <li role="menuitem" class="header-menu-item" tabindex="-1">
+                      Manage Your Team
+                    </li>
+                    <li role="menuitem" class="header-menu-item" tabindex="-1">
+                      Invitations
+                    </li>
+                    <hr />
+                    <li role="menuitem" class="header-menu-item" tabindex="-1">
+                      Authentication
+                    </li>
+                  </ul>
                 </span>
                 <span class="navbar-item">
                   <a class="button is-white is-outlined" href="#documentation">
@@ -502,33 +527,48 @@
             <ul role="tablist">
               <li
                 data-target="pane-1"
-                id="1"
+                id="pictures-tab"
                 class="is-active"
                 role="tab"
+                tabindex="0"
                 aria-controls="pane-1"
-                aria-current="true"
+                aria-selected="true"
               >
-                <a href="#pictures">
+                <a>
                   <span class="icon is-small"
                     ><span aria-hidden="true" class="fa fa-image"></span
                   ></span>
-                  <span>Pictures</span>
+                  <span id="pictures">Pictures</span>
                 </a>
               </li>
-              <li data-target="pane-3" id="3" role="tab" aria-controls="pane-3">
-                <a href="#team">
+              <li
+                data-target="pane-3"
+                id="team-tab"
+                role="tab"
+                aria-controls="pane-3"
+                aria-selected="false"
+                tabindex="-1"
+              >
+                <a>
                   <span class="icon is-small"
                     ><span aria-hidden="true" class="fab fa-superpowers"></span
                   ></span>
-                  <span>Team</span>
+                  <span id="team">Team</span>
                 </a>
               </li>
-              <li data-target="pane-4" id="4" role="tab" aria-controls="pane-4">
-                <a href="#video">
+              <li
+                data-target="pane-4"
+                id="videos-tab"
+                role="tab"
+                aria-controls="pane-4"
+                aria-selected="false"
+                tabindex="-1"
+              >
+                <a>
                   <span class="icon is-small"
                     ><span aria-hidden="true" class="fa fa-film"></span
                   ></span>
-                  <span>Video</span>
+                  <span id="video">Video</span>
                 </a>
               </li>
             </ul>
@@ -536,7 +576,12 @@
         </div>
 
         <div class="tab-content container">
-          <div class="tab-pane is-active level" id="pane-1" role="tabpanel">
+          <div
+            class="tab-pane is-active level"
+            id="pane-1"
+            role="tabpanel"
+            aria-labelledby="pictures"
+          >
             <div class="container">
               <div class="columns features">
                 <div class="column is-4 modal-button">
@@ -636,7 +681,13 @@
             </div>
           </div>
 
-          <div class="tab-pane" id="pane-3" role="tabpanel">
+          <div
+            class="tab-pane"
+            id="pane-3"
+            role="tabpanel"
+            aria-labelledby="team"
+            hidden
+          >
             <div class="columns medias">
               <div class="column">
                 <div class="media">
@@ -751,7 +802,13 @@
             </div>
           </div>
 
-          <div class="tab-pane" id="pane-4" role="tabpanel">
+          <div
+            class="tab-pane"
+            id="pane-4"
+            role="tabpanel"
+            aria-labelledby="video"
+            hidden
+          >
             <div class="columns is-centered">
               <div class="column is-three-quarters">
                 <span class="title has-text-centered">Inspired video</span>
